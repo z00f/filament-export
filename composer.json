@@ -1,0 +1,27 @@
+{
+    "name": "z00f/filament-export",
+    "description": "Customizable export and print functionality for Filament Admin Panel",
+    "autoload": {
+        "psr-4": {
+            "z00f\\FilamentReport\\": "src/"
+        }
+    },
+    "authors": [{
+        "name": "z00f",
+        "email": "z00f@gmail.com"
+    }],
+    "require": {
+        "php": "^8.0",
+        "filament/filament": "^2.0",
+        "maatwebsite/excel": "^3.1",
+        "barryvdh/laravel-dompdf": "^2.0"
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "z00f\\FilamentReport\\FilamentReportServiceProvider"
+            ]
+        }
+    },
+    "license": "MIT"
+}
