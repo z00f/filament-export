@@ -1,5 +1,5 @@
 {
-    "name": "z00f/filament-export",
+    "name": "z00f/filament-report",
     "description": "Customizable export and print functionality for Filament Admin Panel",
     "autoload": {
         "psr-4": {
