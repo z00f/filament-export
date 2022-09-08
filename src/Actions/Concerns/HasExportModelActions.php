@@ -43,16 +43,16 @@ trait HasExportModelActions
                     ->icon(config('filament-report.export_icon')),
                 Action::make('print')
                     ->button()
-                    ->label(__('filament-export::export_action.print_action_label'))
+                    ->label(__('filament-report::export_action.print_action_label'))
                     ->color('gray')
-                    ->icon(config('filament-export.print_icon'))
+                    ->icon(config('filament-report.print_icon'))
                     ->action("\$emit('print-table-{$uniqueActionId}')"),
                 Action::make('cancel')
                     ->button()
-                    ->label(__('filament-export::export_action.cancel_action_label'))
+                    ->label(__('filament-report::export_action.cancel_action_label'))
                     ->cancel()
                     ->color('secondary')
-                    ->icon(config('filament-export.cancel_icon'))
+                    ->icon(config('filament-report.cancel_icon'))
                     ->action("\$emit('close-preview-modal-{$uniqueActionId}')"),
             ]
         );
