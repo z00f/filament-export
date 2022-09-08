@@ -27,8 +27,8 @@ trait HasPageOrientation
     public static function getPageOrientations()
     {
         return [
-            'portrait' =>  __('filament-export::export_action.page_orientation_portrait'),
-            'landscape' => __('filament-export::export_action.page_orientation_landscape')
+            'portrait' =>  __('filament-report::export_action.page_orientation_portrait'),
+            'landscape' => __('filament-report::export_action.page_orientation_landscape')
         ];
     }
 }
