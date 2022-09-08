@@ -13,9 +13,9 @@ trait HasExportModelActions
         return !$this->isPreviewDisabled() ? [
             Action::make('preview')
                 ->button()
-                ->label(__('filament-export::export_action.preview_action_label'))
+                ->label(__('filament-report::export_action.preview_action_label'))
                 ->color('success')
-                ->icon(config('filament-export.preview_icon'))
+                ->icon(config('filament-report.preview_icon'))
                 ->action("\$emit('open-preview-modal-{$uniqueActionId}')")
         ] : [];
     }
@@ -40,7 +40,7 @@ trait HasExportModelActions
                     ->label($this->getModalButtonLabel())
                     ->submit($livewireCallActionName)
                     ->color($this->getColor() !== 'secondary' ? $this->getColor() : null)
-                    ->icon(config('filament-export.export_icon')),
+                    ->icon(config('filament-report.export_icon')),
                 Action::make('print')
                     ->button()
                     ->label(__('filament-export::export_action.print_action_label'))
