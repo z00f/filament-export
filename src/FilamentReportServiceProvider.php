@@ -9,7 +9,7 @@ class FilamentReportServiceProvider extends ServiceProvider
 {
     public function register()
     {
-        $this->mergeConfigFrom(__DIR__ . '/../config/filament-export.php', 'filament-export');
+        $this->mergeConfigFrom(__DIR__ . '/../config/filament-report.php', 'filament-report');
     }
 
     public function boot()
@@ -19,7 +19,7 @@ class FilamentReportServiceProvider extends ServiceProvider
         $this->loadTranslationsFrom(__DIR__ . '/../resources/lang', 'filament-export');
 
         $this->publishes([
-            __DIR__ . '/../config/filament-export.php' => config_path('filament-export.php'),
+            __DIR__ . '/../config/filament-report.php' => config_path('filament-report.php'),
         ], 'config');
 
         $this->publishes([
