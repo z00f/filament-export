@@ -20,7 +20,7 @@ class TableView extends Component
     {
         parent::setUp();
 
-        $this->view('filament-export::components.table_view');
+        $this->view('filament-report::components.table_view');
     }
 
     public static function make(string $name): static
