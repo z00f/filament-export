@@ -58,7 +58,7 @@ class FilamentReport implements FromCollection, WithHeadings, WithTitle, WithCus
     {
         $this->fileName(Date::now()->toString());
 
-        $this->format(config('filament-export.default_format'));
+        $this->format(config('filament-report.default_format'));
     }
 
     public function getAllColumns(): Collection
@@ -78,7 +78,7 @@ class FilamentReport implements FromCollection, WithHeadings, WithTitle, WithCus
 
     public function getPdfView(): string
     {
-        return 'filament-export::pdf';
+        return 'filament-report::pdf';
     }
 
     public function getPdfViewData(): array
@@ -117,47 +117,47 @@ class FilamentReport implements FromCollection, WithHeadings, WithTitle, WithCus
 
     public static function setUpFilamentReportAction(FilamentReportHeaderAction | FilamentReportBulkAction $action): void
     {
-        $action->timeFormat(config('filament-export.time_format'));
+        $action->timeFormat(config('filament-report.time_format'));
 
-        $action->defaultFormat(config('filament-export.default_format'));
+        $action->defaultFormat(config('filament-report.default_format'));
 
-        $action->defaultPageOrientation(config('filament-export.default_page_orientation'));
+        $action->defaultPageOrientation(config('filament-report.default_page_orientation'));
 
-        $action->disableAdditionalColumns(config('filament-export.disable_additional_columns'));
+        $action->disableAdditionalColumns(config('filament-report.disable_additional_columns'));
 
-        $action->disableFilterColumns(config('filament-export.disable_filter_columns'));
+        $action->disableFilterColumns(config('filament-report.disable_filter_columns'));
 
-        $action->disableFileName(config('filament-export.disable_file_name'));
+        $action->disableFileName(config('filament-report.disable_file_name'));
 
-        $action->disableFileNamePrefix(config('filament-export.disable_file_name_prefix'));
+        $action->disableFileNamePrefix(config('filament-report.disable_file_name_prefix'));
 
-        $action->disablePreview(config('filament-export.disable_preview'));
+        $action->disablePreview(config('filament-report.disable_preview'));
 
-        $action->snappy(config('filament-export.use_snappy', false));
+        $action->snappy(config('filament-report.use_snappy', false));
 
-        $action->icon(config('filament-export.action_icon'));
+        $action->icon(config('filament-report.action_icon'));
 
         $action->fileName(Carbon::now()->translatedFormat($action->getTimeFormat()));
 
-        $action->fileNameFieldLabel(__('filament-export::export_action.file_name_field_label'));
+        $action->fileNameFieldLabel(__('filament-report::export_action.file_name_field_label'));
 
-        $action->filterColumnsFieldLabel(__('filament-export::export_action.filter_columns_field_label'));
+        $action->filterColumnsFieldLabel(__('filament-report::export_action.filter_columns_field_label'));
 
-        $action->formatFieldLabel(__('filament-export::export_action.format_field_label'));
+        $action->formatFieldLabel(__('filament-report::export_action.format_field_label'));
 
-        $action->pageOrientationFieldLabel(__('filament-export::export_action.page_orientation_field_label'));
+        $action->pageOrientationFieldLabel(__('filament-report::export_action.page_orientation_field_label'));
 
-        $action->additionalColumnsFieldLabel(__('filament-export::export_action.additional_columns_field.label'));
+        $action->additionalColumnsFieldLabel(__('filament-report::export_action.additional_columns_field.label'));
 
-        $action->additionalColumnsTitleFieldLabel(__('filament-export::export_action.additional_columns_field.title_field_label'));
+        $action->additionalColumnsTitleFieldLabel(__('filament-report::export_action.additional_columns_field.title_field_label'));
 
-        $action->additionalColumnsDefaultValueFieldLabel(__('filament-export::export_action.additional_columns_field.default_value_field_label'));
+        $action->additionalColumnsDefaultValueFieldLabel(__('filament-report::export_action.additional_columns_field.default_value_field_label'));
 
-        $action->additionalColumnsAddButtonLabel(__('filament-export::export_action.additional_columns_field.add_button_label'));
+        $action->additionalColumnsAddButtonLabel(__('filament-report::export_action.additional_columns_field.add_button_label'));
 
-        $action->modalButton(__('filament-export::export_action.export_action_label'));
+        $action->modalButton(__('filament-report::export_action.export_action_label'));
 
-        $action->modalHeading(__('filament-export::export_action.modal_heading'));
+        $action->modalHeading(__('filament-report::export_action.modal_heading'));
 
         $action->modalActions($action->getExportModalActions());
     }
